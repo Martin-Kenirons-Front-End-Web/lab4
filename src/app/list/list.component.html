@@ -1,0 +1,40 @@
+<!-- 
+    The heading introduces the section of the page dedicated
+    to listing the Presidents of Ireland 
+-->
+<h2>Presidents of Ireland</h2>
+
+<!-- 
+    This unordered list uses Angular's *ngFor directive.
+    For each president in the 'presidents' array, an <li> element is created.
+    The double curly braces {{ president }} interpolate and display
+    each president's name in the view.
+-->
+<ul>
+    <li *ngFor="let president of presidents">
+        {{ president }}
+    </li>
+</ul>
+
+<!-- 
+    This ordered list demonstrates a hypothetical or custom template syntax:
+    @for(...) can loop over the 'presidents' collection and produce <li> items.
+    The 'track president' portion might be used by a templating engine for tracking changes.
+-->
+<ol>
+    @for(president of presidents;track president){
+        <li>{{ president }}</li>
+    }
+</ol>
+
+<!-- 
+    This final list also uses a similar custom @for(...) syntax.
+    It loops over 'mypresidents', each item called 'pres'.
+    We then display the 'name' and 'term' properties of each 'pres' object.
+-->
+<ul>
+    @for(pres of mypresidents;track pres){
+        <li>{{ pres.name }}, {{ pres.term }}</li>
+    }   
+</ul>
+
